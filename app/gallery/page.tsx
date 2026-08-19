@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     "massage room Vashi",
     "spa Navi Mumbai",
     "best spa in Vashi",
-     "spa in Vashi",
+    "spa in Vashi",
   ],
 
   alternates: {
@@ -366,19 +366,21 @@ export default function GalleryPage() {
                 index === 10;
 
               return (
+
                 <article
                   key={item.id}
                   className={`
-                    group
-                    relative
-                    overflow-hidden
-                    rounded-2xl
-                    bg-[#E9EFEC]
-                    ${featured
-                      ? "col-span-2 min-h-[250px] aspect-[1.55/1] sm:min-h-[360px] sm:row-span-2 sm:aspect-auto"
-                      : "min-h-[180px] aspect-[1/1.05]"
+    group
+    relative
+    w-full
+    overflow-hidden
+    rounded-2xl
+    bg-[#E9EFEC]
+    ${featured
+                      ? "col-span-2 aspect-[1.55/1] sm:row-span-2 sm:aspect-auto sm:min-h-[360px]"
+                      : "aspect-[1/1.05]"
                     }
-                  `}
+  `}
                 >
                   <Image
                     src={item.image}
@@ -393,12 +395,12 @@ export default function GalleryPage() {
                         : "(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw"
                     }
                     className="
-                      object-cover
-                      transition-transform
-                      duration-700
-                      ease-out
-                      group-hover:scale-[1.06]
-                    "
+      object-cover
+      transition-transform
+      duration-700
+      ease-out
+      group-hover:scale-[1.06]
+    "
                   />
 
                   {/* Overlay */}
@@ -406,17 +408,17 @@ export default function GalleryPage() {
                   <div
                     aria-hidden="true"
                     className="
-                      absolute
-                      inset-0
-                      bg-gradient-to-t
-                      from-[#123B3A]/75
-                      via-[#123B3A]/10
-                      to-transparent
-                      opacity-70
-                      transition-opacity
-                      duration-300
-                      group-hover:opacity-100
-                    "
+      absolute
+      inset-0
+      bg-gradient-to-t
+      from-[#123B3A]/75
+      via-[#123B3A]/10
+      to-transparent
+      opacity-70
+      transition-opacity
+      duration-300
+      group-hover:opacity-100
+    "
                   />
 
                   {/* Category */}
@@ -424,24 +426,24 @@ export default function GalleryPage() {
                   {item.category && (
                     <span
                       className="
-                        absolute
-                        left-3
-                        top-3
-                        rounded-full
-                        border
-                        border-white/20
-                        bg-[#123B3A]/50
-                        px-2.5
-                        py-1.5
-                        text-[7px]
-                        font-bold
-                        uppercase
-                        tracking-[0.13em]
-                        text-white
-                        backdrop-blur-md
-                        sm:left-4
-                        sm:top-4
-                      "
+        absolute
+        left-3
+        top-3
+        rounded-full
+        border
+        border-white/20
+        bg-[#123B3A]/50
+        px-2.5
+        py-1.5
+        text-[7px]
+        font-bold
+        uppercase
+        tracking-[0.13em]
+        text-white
+        backdrop-blur-md
+        sm:left-4
+        sm:top-4
+      "
                     >
                       {item.category}
                     </span>
@@ -451,33 +453,33 @@ export default function GalleryPage() {
 
                   <div
                     className="
-                      absolute
-                      inset-x-0
-                      bottom-0
-                      p-3
-                      sm:p-4
-                      lg:p-5
-                    "
+      absolute
+      inset-x-0
+      bottom-0
+      p-3
+      sm:p-4
+      lg:p-5
+    "
                   >
                     <div
                       className="
-                        flex
-                        items-end
-                        justify-between
-                        gap-3
-                      "
+        flex
+        items-end
+        justify-between
+        gap-3
+      "
                     >
                       <div>
                         <h3
                           className={`
-                            font-serif
-                            leading-tight
-                            text-white
-                            ${featured
+            font-serif
+            leading-tight
+            text-white
+            ${featured
                               ? "text-xl sm:text-2xl"
                               : "text-sm sm:text-base"
                             }
-                          `}
+          `}
                         >
                           {item.title}
                         </h3>
@@ -485,14 +487,14 @@ export default function GalleryPage() {
                         {item.description && (
                           <p
                             className="
-                              mt-1
-                              hidden
-                              max-w-md
-                              text-[10px]
-                              leading-5
-                              text-white/65
-                              sm:block
-                            "
+              mt-1
+              hidden
+              max-w-md
+              text-[10px]
+              leading-5
+              text-white/65
+              sm:block
+            "
                           >
                             {item.description}
                           </p>
@@ -501,26 +503,28 @@ export default function GalleryPage() {
 
                       <span
                         className="
-                          flex
-                          h-8
-                          w-8
-                          shrink-0
-                          items-center
-                          justify-center
-                          rounded-full
-                          bg-white
-                          text-[#175C5A]
-                          shadow-lg
-                          transition-all
-                          duration-300
-                          group-hover:scale-110
-                        "
+          flex
+          h-8
+          w-8
+          shrink-0
+          items-center
+          justify-center
+          rounded-full
+          bg-white
+          text-[#175C5A]
+          shadow-lg
+          transition-all
+          duration-300
+          group-hover:scale-110
+        "
                       >
                         <FiArrowRight size={13} />
                       </span>
                     </div>
                   </div>
                 </article>
+
+
               );
             })}
           </div>

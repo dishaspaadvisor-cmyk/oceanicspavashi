@@ -220,19 +220,21 @@ export default function Gallery() {
 
         <div
           className="
-            mt-10
-            grid
-            grid-cols-2
-            gap-2.5
-            sm:mt-12
-            sm:gap-4
-            lg:grid-cols-12
-            lg:grid-rows-[230px_230px]
-            lg:gap-5
-          "
+    mt-10
+    grid
+    grid-cols-2
+    items-stretch
+    gap-2.5
+    sm:mt-12
+    sm:gap-4
+    lg:grid-cols-12
+    lg:grid-rows-[230px_230px]
+    lg:gap-5
+  "
         >
           {images.map((image, index) => (
             <GalleryItem
+
               key={image.id ?? image.image}
               image={image}
               index={index}
@@ -443,10 +445,9 @@ function GalleryItem({
           relative
           h-full
           min-h-[165px]
-          ${
-            index === 0
-              ? "sm:min-h-[250px]"
-              : "sm:min-h-[190px]"
+          ${index === 0
+            ? "sm:min-h-[250px]"
+            : "sm:min-h-[190px]"
           }
           lg:min-h-0
         `}
@@ -455,6 +456,7 @@ function GalleryItem({
           src={image.image}
           alt={image.alt}
           fill
+          loading="eager"
           sizes="(max-width: 639px) 50vw, (max-width: 1023px) 50vw, 42vw"
           className="
             object-cover
@@ -646,6 +648,9 @@ function GalleryItem({
           </div>
         </div>
       </div>
+
+
+
     </Link>
   );
 }

@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
+
 import {
   FaCheck,
   FaClock,
@@ -16,41 +18,70 @@ const SHOW_DELAY = 30000;
 const OFFER_DURATION_SECONDS = 10 * 60;
 
 export default function Popup() {
+  const [portalTarget, setPortalTarget] =
+    useState<HTMLElement | null>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [secondsLeft, setSecondsLeft] = useState(
     OFFER_DURATION_SECONDS
   );
 
   /* =========================================================
-     SHOW POPUP GLOBALLY AFTER 30 SECONDS
+     WAIT FOR BROWSER
   ========================================================= */
 
   useEffect(() => {
-    const showTimer = window.setTimeout(() => {
-      setIsOpen(true);
-    }, SHOW_DELAY);
+    const portalRoot = document.createElement("div");
+
+    portalRoot.setAttribute(
+      "data-oceanic-popup-root",
+      "true"
+    );
+
+    document.documentElement.appendChild(portalRoot);
+
+    const targetTimer = window.setTimeout(() => {
+      setPortalTarget(portalRoot);
+    }, 0);
 
     return () => {
-      window.clearTimeout(showTimer);
+      window.clearTimeout(targetTimer);
+      setPortalTarget(null);
+      portalRoot.remove();
     };
   }, []);
 
   /* =========================================================
-     COUNTDOWN TIMER
+     SHOW POPUP AFTER 30 SECONDS
+  ========================================================= */
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      setSecondsLeft(OFFER_DURATION_SECONDS);
+      setIsOpen(true);
+    }, SHOW_DELAY);
+
+    return () => {
+      window.clearTimeout(timer);
+    };
+  }, []);
+
+  /* =========================================================
+     COUNTDOWN
   ========================================================= */
 
   useEffect(() => {
     if (!isOpen) return;
 
     const timer = window.setInterval(() => {
-      setSecondsLeft((prev) => {
-        if (prev <= 1) {
+      setSecondsLeft((previous) => {
+        if (previous <= 1) {
           window.clearInterval(timer);
           setIsOpen(false);
+
           return 0;
         }
 
-        return prev - 1;
+        return previous - 1;
       });
     }, 1000);
 
@@ -60,7 +91,7 @@ export default function Popup() {
   }, [isOpen]);
 
   /* =========================================================
-     ESC CLOSE
+     ESCAPE KEY
   ========================================================= */
 
   useEffect(() => {
@@ -75,36 +106,46 @@ export default function Popup() {
     document.addEventListener("keydown", handleEscape);
 
     return () => {
-      document.removeEventListener("keydown", handleEscape);
+      document.removeEventListener(
+        "keydown",
+        handleEscape
+      );
     };
   }, [isOpen]);
 
   /* =========================================================
-     LOCK BODY SCROLL
+     BODY SCROLL LOCK
   ========================================================= */
 
   useEffect(() => {
     if (!isOpen) return;
 
-    const previousOverflow = document.body.style.overflow;
+    const previousOverflow =
+      document.body.style.overflow;
+    const previousHtmlOverflow =
+      document.documentElement.style.overflow;
 
     document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
 
     return () => {
-      document.body.style.overflow = previousOverflow;
+      document.body.style.overflow =
+        previousOverflow;
+      document.documentElement.style.overflow =
+        previousHtmlOverflow;
     };
   }, [isOpen]);
 
   /* =========================================================
-     DON'T RENDER WHEN CLOSED
+     SSR / HYDRATION
   ========================================================= */
 
-  if (!isOpen) {
+  if (!isOpen || !portalTarget) {
     return null;
   }
 
   /* =========================================================
-     TIMER FORMAT
+     TIMER
   ========================================================= */
 
   const minutes = Math.floor(secondsLeft / 60)
@@ -127,15 +168,21 @@ export default function Popup() {
   }?text=${encodeURIComponent(whatsappMessage)}`;
 
   /* =========================================================
-     POPUP
+     POPUP CONTENT
+     RENDER DIRECTLY INTO BODY
   ========================================================= */
 
-  return (
+  return createPortal(
     <div
+      style={{
+        position: "fixed",
+        left: 0,
+        top: 0,
+        width: "100vw",
+        height: "100dvh",
+        zIndex: 2147483647,
+      }}
       className="
-        fixed
-        inset-0
-        z-[99999]
         flex
         items-start
         justify-center
@@ -228,8 +275,8 @@ export default function Popup() {
               h-[245px]
               overflow-hidden
               sm:h-[300px]
-              md:min-h-[540px]
               md:h-auto
+              md:min-h-[540px]
             "
           >
             <Image
@@ -265,9 +312,7 @@ export default function Popup() {
               "
             />
 
-            {/* =================================================
-                MOBILE IMAGE CONTENT
-            ================================================= */}
+            {/* MOBILE CONTENT */}
 
             <div
               className="
@@ -319,9 +364,7 @@ export default function Popup() {
               </h2>
             </div>
 
-            {/* =================================================
-                DESKTOP IMAGE CONTENT
-            ================================================= */}
+            {/* DESKTOP CONTENT */}
 
             <div
               className="
@@ -402,7 +445,7 @@ export default function Popup() {
               md:py-10
             "
           >
-            {/* TOP BADGES */}
+            {/* BADGES */}
 
             <div
               className="
@@ -593,9 +636,7 @@ export default function Popup() {
               ))}
             </div>
 
-            {/* =================================================
-                CTA BUTTONS
-            ================================================= */}
+            {/* CTA */}
 
             <div
               className="
@@ -629,7 +670,6 @@ export default function Popup() {
                 "
               >
                 <FaPhoneAlt size={13} />
-
                 Call Now
               </a>
 
@@ -659,7 +699,6 @@ export default function Popup() {
                 "
               >
                 <FaWhatsapp size={17} />
-
                 WhatsApp
               </a>
             </div>
@@ -711,6 +750,7 @@ export default function Popup() {
           </div>
         </div>
       </section>
-    </div>
+    </div>,
+    portalTarget
   );
 }

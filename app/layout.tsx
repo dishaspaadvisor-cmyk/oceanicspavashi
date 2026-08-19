@@ -182,7 +182,9 @@ export default function RootLayout({
             PAGE CONTENT
         ================================================= */}
 
-        <MainContent>{children}</MainContent>
+        <MainContent>
+          {children}
+        </MainContent>
 
         {/* =================================================
             GLOBAL POPUP
