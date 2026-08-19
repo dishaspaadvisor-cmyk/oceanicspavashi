@@ -10,12 +10,12 @@ import {
 } from "react-icons/fa";
 
 export const homeServiceSlugs = [
-  "deep-tissue-massage",
-  "foot-reflexology",
-  "four-hand-couple-special-treatment",
-  "four-hand-couple-treatment-jacuzzi",
-  "swedish-massage",
-  "balinese-massage",
+  "deep-tissue-massage-in-oceanicspa-vashi",
+  "foot-reflexology-in-oceanicspa-vashi",
+  "four-hand-couple-special-treatment-in-oceanicspa-vashi",
+  "four-hand-couple-treatment-jacuzzi-in-oceanicspa-vashi",
+  "swedish-massage-in-oceanicspa-vashi",
+  "balinese-massage-in-oceanicspa-vashi",
 ];
 
 export const heroTrustPoints = [

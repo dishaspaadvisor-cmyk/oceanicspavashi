@@ -20,7 +20,7 @@ import FAQ from "@/components/home/FAQ";
 
 export const metadata: Metadata = {
   title:
-    "Oceanic Spa Vashi | Premium Spa & Massage in Vashi, Navi Mumbai",
+    "Oceanic Spa Vashi | Best Spa & Massage in Vashi, Navi Mumbai",
 
   description:
     "Experience relaxing spa and massage treatments at Oceanic Spa Vashi, Navi Mumbai. Explore Deep Tissue, Swedish, Balinese, Thai, Foot Reflexology, Four Hand Massage and more.",

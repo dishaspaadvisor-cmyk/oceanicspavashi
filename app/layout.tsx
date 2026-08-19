@@ -8,6 +8,7 @@ import Footer from "@/components/layout/Footer";
 import MainContent from "@/components/layout/MainContent";
 import FloatingCTA from "@/components/cards/FloatingCTA";
 import BottomCTA from "@/components/cards/BottomCTA";
+import Popup from "@/components/Popup";
 
 import { site } from "@/data/site";
 
@@ -132,11 +133,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const localBusinessSchema =
-    getLocalBusinessSchema();
-
-  const websiteSchema =
-    getWebsiteSchema();
+  const localBusinessSchema = getLocalBusinessSchema();
+  const websiteSchema = getWebsiteSchema();
 
   return (
     <html lang="en-IN" data-scroll-behavior="smooth">
@@ -148,9 +146,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(
-              localBusinessSchema
-            ).replace(/</g, "\\u003c"),
+            __html: JSON.stringify(localBusinessSchema).replace(
+              /</g,
+              "\\u003c"
+            ),
           }}
         />
 
@@ -161,44 +160,58 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(
-              websiteSchema
-            ).replace(/</g, "\\u003c"),
+            __html: JSON.stringify(websiteSchema).replace(
+              /</g,
+              "\\u003c"
+            ),
           }}
         />
       </head>
 
-      <body className="min-h-screen text-white antialiased">
+      <body
+        className="min-h-screen text-white antialiased"
+        suppressHydrationWarning
+      >
         {/* =================================================
-            NAVBAR
+            GLOBAL NAVBAR
         ================================================= */}
 
         <Navbar />
 
         {/* =================================================
-            MAIN CONTENT
+            PAGE CONTENT
         ================================================= */}
 
-        <MainContent>
-          {children}
-        </MainContent>
+        <MainContent>{children}</MainContent>
 
         {/* =================================================
-            FOOTER
+            GLOBAL POPUP
+            Mounted outside page content so it appears on
+            every route.
+        ================================================= */}
+
+        <Popup />
+
+        {/* =================================================
+            GLOBAL BOTTOM CTA
         ================================================= */}
 
         <BottomCTA />
+
+        {/* =================================================
+            GLOBAL FOOTER
+        ================================================= */}
+
         <Footer />
 
         {/* =================================================
-            FLOATING CONTACT CTA
+            GLOBAL FLOATING CTA
         ================================================= */}
 
         <FloatingCTA />
 
         {/* =================================================
             GOOGLE ANALYTICS
-            Add your real GA ID in .env.local
         ================================================= */}
 
         {process.env.NEXT_PUBLIC_GA_ID && (
@@ -231,7 +244,6 @@ export default function RootLayout({
 
         {/* =================================================
             GOOGLE ADS
-            Add your Ads ID in .env.local
         ================================================= */}
 
         {process.env.NEXT_PUBLIC_GOOGLE_ADS_ID && (

@@ -151,7 +151,6 @@ export default function ServiceDetails({
                     `${service.name} at Oceanic Spa Vashi`
                   }
                   fill
-                  priority
                   sizes="(max-width: 1023px) 100vw, 52vw"
                   className="
                     object-cover

@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { FaArrowRight as FiArrowRight } from "react-icons/fa";
 
@@ -232,7 +230,6 @@ export default function Services() {
                     service.id ??
                     index + 1,
                 }}
-                priority={index < 2}
                 variant={
                   index === 0
                     ? "featured"

@@ -82,7 +82,7 @@ export const site: SiteData = {
   shortName: "Oceanic Spa",
   tagline: "Premium spa and massage in Vashi",
 
-  url: "https://oceanicspavashi.in",
+  url: "https://oceanic-spa-vashi.com",
 
   contact: {
     phone: "7045513567",
@@ -182,7 +182,7 @@ export const site: SiteData = {
   branding: {
     logo: "/logo/oceanicspavashi.png",
     logoAlt: "Oceanic Spa Vashi Logo",
-    favicon: "/favicon.ico",
+    favicon: "/logo/favicon.png",
   },
 
   business: {

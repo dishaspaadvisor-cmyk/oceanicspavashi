@@ -5,10 +5,8 @@ import {
   FaArrowRight as FiArrowRight,
   FaCalendarAlt as FiCalendar,
   FaHeart as FiHeart,
-  FaMapMarkerAlt as FiMapPin,
   FaWhatsapp as FiMessageCircle,
   FaPhoneAlt as FiPhone,
-  FaStar as FiStar,
 } from "react-icons/fa";
 
 import { galleryImages } from "@/data/gallery";
@@ -377,8 +375,8 @@ export default function GalleryPage() {
                     rounded-2xl
                     bg-[#E9EFEC]
                     ${featured
-                      ? "col-span-2 aspect-[1.55/1] sm:row-span-2 sm:aspect-auto"
-                      : "aspect-[1/1.05]"
+                      ? "col-span-2 min-h-[250px] aspect-[1.55/1] sm:min-h-[360px] sm:row-span-2 sm:aspect-auto"
+                      : "min-h-[180px] aspect-[1/1.05]"
                     }
                   `}
                 >
@@ -389,7 +387,6 @@ export default function GalleryPage() {
                       `${item.title} at Oceanic Spa Vashi`
                     }
                     fill
-                    priority={index < 3}
                     sizes={
                       featured
                         ? "(max-width: 639px) 100vw, (max-width: 1023px) 66vw, 50vw"
@@ -837,42 +834,3 @@ export default function GalleryPage() {
   );
 }
 
-/* =========================================================
-   TRUST POINT
-========================================================= */
-
-function TrustPoint({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <span
-      className="
-        inline-flex
-        items-center
-        gap-1.5
-        text-[9px]
-        font-medium
-        text-[#7D8884]
-      "
-    >
-      <span
-        className="
-          flex
-          h-5
-          w-5
-          items-center
-          justify-center
-          rounded-full
-          bg-[#EEF7F5]
-          text-[#175C5A]
-        "
-      >
-        {children}
-      </span>
-
-      <span>{children}</span>
-    </span>
-  );
-}

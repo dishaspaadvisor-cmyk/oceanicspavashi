@@ -97,7 +97,6 @@ export default function Hero() {
           src="/images/hero-desktop.png"
           alt="Premium spa and massage experience at Oceanic Spa Vashi"
           fill
-          priority
           fetchPriority="high"
           sizes="100vw"
           className="
@@ -116,9 +115,8 @@ export default function Hero() {
           src="/images/hero-phone.png"
           alt="Relaxing massage experience at Oceanic Spa Vashi"
           fill
-          priority
           fetchPriority="high"
-          sizes="100vw"
+          sizes="(max-width: 767px) 100vw"
           className="
             object-cover
             object-center

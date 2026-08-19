@@ -381,7 +381,6 @@ export default function ServicesPage() {
                     ? "featured"
                     : "default"
                 }
-                priority={index < 3}
               />
             ))}
           </div>
