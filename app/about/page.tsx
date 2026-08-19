@@ -21,8 +21,7 @@ import { site } from "@/data/site";
 ========================================================= */
 
 export const metadata: Metadata = {
-  title:
-    "About Oceanic Spa Vashi | Spa & Massage in Navi Mumbai",
+  title: "About Oceanic Spa Vashi | Spa & Massage in Navi Mumbai",
 
   description:
     "Learn more about Oceanic Spa Vashi, a relaxing spa in Vashi, Navi Mumbai offering a range of massage and wellness treatments in a comfortable environment.",
@@ -43,8 +42,7 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title:
-      "About Oceanic Spa Vashi | Spa & Massage in Navi Mumbai",
+    title: "About Oceanic Spa Vashi | Spa & Massage in Navi Mumbai",
 
     description:
       "Discover Oceanic Spa Vashi and our approach to creating a comfortable and relaxing spa experience in Vashi, Navi Mumbai.",
@@ -80,7 +78,7 @@ export default function AboutPage() {
   const whatsappUrl =
     `https://wa.me/${site.contact.whatsapp}` +
     `?text=${encodeURIComponent(
-      "Hello Oceanic Spa Vashi, I would like to know more about your spa and massage treatments."
+      "Hello Oceanic Spa Vashi, I would like to know more about your spa and massage treatments.",
     )}`;
 
   /* =======================================================
@@ -155,7 +153,6 @@ export default function AboutPage() {
 
   return (
     <main className="overflow-x-hidden bg-[#F7FAF9]/90">
-
       {/* ===================================================
           STRUCTURED DATA
       ==================================================== */}
@@ -248,21 +245,13 @@ export default function AboutPage() {
               text-[#8B9692]
             "
           >
-            <Link
-              href="/"
-              className="hover:text-[#175C5A]"
-            >
+            <Link href="/" className="hover:text-[#175C5A]">
               Home
             </Link>
 
-            <span className="text-[#C4CCC9]">
-              /
-            </span>
+            <span className="text-[#C4CCC9]">/</span>
 
-            <span
-              className="text-[#175C5A]"
-              aria-current="page"
-            >
+            <span className="text-[#175C5A]" aria-current="page">
               About
             </span>
           </nav>
@@ -319,10 +308,7 @@ export default function AboutPage() {
             >
               Your Space to
               <br />
-              <span className="text-[#175C5A]">
-                Pause & Relax
-              </span>
-              .
+              <span className="text-[#175C5A]">Pause & Relax</span>.
             </h1>
 
             <p
@@ -336,10 +322,9 @@ export default function AboutPage() {
                 sm:text-[15px]
               "
             >
-              Welcome to Oceanic Spa Vashi, a place
-              created for those looking to step away from
-              their busy routine and enjoy a relaxing spa
-              and massage experience.
+              Welcome to Oceanic Spa Vashi, a place created for those looking to
+              step away from their busy routine and enjoy a relaxing spa and
+              massage experience.
             </p>
           </div>
         </div>
@@ -389,9 +374,7 @@ export default function AboutPage() {
               "
             >
               <Image
-                src={
-                  "/gallery/gallery-1.png"
-                }
+                src="/images/about.png"
                 alt="Oceanic Spa Vashi relaxing spa interior"
                 fill
                 sizes="(max-width: 1023px) 100vw, 50vw"
@@ -477,8 +460,7 @@ export default function AboutPage() {
                   sm:text-4xl
                 "
               >
-                A comfortable place
-                to slow down.
+                A comfortable place to slow down.
               </h2>
 
               <div
@@ -491,25 +473,20 @@ export default function AboutPage() {
                 "
               >
                 <p>
-                  At Oceanic Spa Vashi, we believe that
-                  taking time for yourself is an important
-                  part of a balanced lifestyle.
+                  At Oceanic Spa Vashi, we believe that taking time for yourself
+                  is an important part of a balanced lifestyle.
                 </p>
 
                 <p>
-                  Our spa experience brings together a
-                  comfortable environment and a range of
-                  massage treatments so that you can
-                  choose an experience that matches your
-                  preferences.
+                  Our spa experience brings together a comfortable environment
+                  and a range of massage treatments so that you can choose an
+                  experience that matches your preferences.
                 </p>
 
                 <p>
-                  Whether you are looking for a relaxing
-                  full body massage, traditional Thai
-                  massage, Swedish massage, Balinese
-                  massage, aroma massage or another
-                  treatment, our goal is to make your
+                  Whether you are looking for a relaxing full body massage,
+                  traditional Thai massage, Swedish massage, Balinese massage,
+                  aroma massage or another treatment, our goal is to make your
                   visit comfortable from start to finish.
                 </p>
               </div>
@@ -594,8 +571,7 @@ export default function AboutPage() {
                 sm:text-4xl
               "
             >
-              Designed around your
-              comfort
+              Designed around your comfort
             </h2>
 
             <p
@@ -606,9 +582,8 @@ export default function AboutPage() {
                 text-[#727D7A]
               "
             >
-              From choosing your treatment to leaving
-              the spa, every part of the experience should
-              feel calm, comfortable and unhurried.
+              From choosing your treatment to leaving the spa, every part of the
+              experience should feel calm, comfortable and unhurried.
             </p>
           </div>
 
@@ -710,8 +685,7 @@ export default function AboutPage() {
                   sm:text-4xl
                 "
               >
-                Find a treatment
-                that suits you.
+                Find a treatment that suits you.
               </h2>
 
               <p
@@ -723,37 +697,23 @@ export default function AboutPage() {
                   text-[#727D7A]
                 "
               >
-                Everyone has a different idea of
-                relaxation. That is why Oceanic Spa Vashi
-                offers a variety of massage treatments,
-                allowing you to explore different styles
-                and choose what feels right for you.
+                Everyone has a different idea of relaxation. That is why Oceanic
+                Spa Vashi offers a variety of massage treatments, allowing you
+                to explore different styles and choose what feels right for you.
               </p>
 
               <div className="mt-6 space-y-3">
-                <CheckPoint>
-                  Full Body Massage
-                </CheckPoint>
+                <CheckPoint>Full Body Massage</CheckPoint>
 
-                <CheckPoint>
-                  Swedish Massage
-                </CheckPoint>
+                <CheckPoint>Swedish Massage</CheckPoint>
 
-                <CheckPoint>
-                  Full Body Thai Massage
-                </CheckPoint>
+                <CheckPoint>Full Body Thai Massage</CheckPoint>
 
-                <CheckPoint>
-                  Balinese Massage
-                </CheckPoint>
+                <CheckPoint>Balinese Massage</CheckPoint>
 
-                <CheckPoint>
-                  French Aroma Massage
-                </CheckPoint>
+                <CheckPoint>French Aroma Massage</CheckPoint>
 
-                <CheckPoint>
-                  Deep Tissue Massage
-                </CheckPoint>
+                <CheckPoint>Deep Tissue Massage</CheckPoint>
               </div>
 
               <Link
@@ -779,7 +739,6 @@ export default function AboutPage() {
                 "
               >
                 Explore All Services
-
                 <FiArrowRight size={14} />
               </Link>
             </div>
@@ -866,9 +825,8 @@ export default function AboutPage() {
                     text-white/60
                   "
                 >
-                  Take a break from the everyday and
-                  enjoy dedicated time for relaxation at
-                  Oceanic Spa Vashi.
+                  Take a break from the everyday and enjoy dedicated time for
+                  relaxation at Oceanic Spa Vashi.
                 </p>
 
                 <div
@@ -900,7 +858,6 @@ export default function AboutPage() {
                     "
                   >
                     <FiCalendar size={14} />
-
                     Book Appointment
                   </Link>
 
@@ -929,7 +886,6 @@ export default function AboutPage() {
                     "
                   >
                     <FiMessageCircle size={14} />
-
                     WhatsApp
                   </a>
                 </div>
@@ -1027,9 +983,7 @@ export default function AboutPage() {
                     "
                   />
 
-                  <span>
-                    {site.contact.address}
-                  </span>
+                  <span>{site.contact.address}</span>
                 </div>
               </div>
 
@@ -1060,9 +1014,7 @@ export default function AboutPage() {
                   "
                 >
                   <FiMapPin size={13} />
-
                   Get Directions
-
                   <FiArrowRight size={13} />
                 </a>
               )}
@@ -1078,25 +1030,26 @@ export default function AboutPage() {
       <section
         aria-labelledby="about-form-heading"
         className="
-          bg-white
-          px-4
-          py-12
-          sm:px-6
-          sm:py-16
-          lg:px-8
-          lg:py-20
-        "
+    bg-white
+    px-4
+    py-12
+    sm:px-6
+    sm:py-16
+    lg:px-8
+    lg:py-20
+  "
       >
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          {/* LEFT SIDE */}
           <div className="lg:sticky lg:top-32">
             <p
               className="
-                text-[10px]
-                font-bold
-                uppercase
-                tracking-[0.22em]
-                text-[#175C5A]
-              "
+          text-[10px]
+          font-bold
+          uppercase
+          tracking-[0.22em]
+          text-[#175C5A]
+        "
             >
               Plan Your Visit
             </p>
@@ -1104,33 +1057,59 @@ export default function AboutPage() {
             <h2
               id="about-form-heading"
               className="
-                mt-3
-                font-serif
-                text-3xl
-                font-normal
-                leading-tight
-                text-[#24302F]
-                sm:text-4xl
-              "
+          mt-3
+          font-serif
+          text-3xl
+          font-normal
+          leading-tight
+          text-[#24302F]
+          sm:text-4xl
+        "
             >
               Enquire about your spa experience
             </h2>
 
             <p
               className="
-                mt-4
-                max-w-xl
-                text-sm
-                leading-7
-                text-[#687371]
-              "
+          mt-4
+          max-w-xl
+          text-sm
+          leading-7
+          text-[#687371]
+        "
             >
-              Send your details and our team can help
-              with treatment options, current availability
-              and appointment planning.
+              Send your details and our team can help with treatment options,
+              current availability and appointment planning.
             </p>
+
+            {/* IMAGE */}
+            <div
+              className="
+          mt-7
+          overflow-hidden
+          rounded-[28px]
+          border
+          border-[#E6ECEA]
+          bg-[#F5F8F7]
+          shadow-[0_18px_55px_rgba(23,92,90,0.12)]
+        "
+            >
+              <img
+                src="/images/find.png"
+                alt="Oceanic Spa Vashi"
+                className="
+            h-[300px]
+            w-full
+            object-cover
+            object-center
+            sm:h-[380px]
+            lg:h-[430px]
+          "
+              />
+            </div>
           </div>
 
+          {/* RIGHT SIDE FORM */}
           <ContactForm />
         </div>
       </section>
@@ -1237,9 +1216,8 @@ export default function AboutPage() {
               text-white/60
             "
           >
-            Explore our massage treatments or contact
-            Oceanic Spa Vashi to plan your next relaxing
-            visit.
+            Explore our massage treatments or contact Oceanic Spa Vashi to plan
+            your next relaxing visit.
           </p>
 
           <div
@@ -1274,7 +1252,6 @@ export default function AboutPage() {
               "
             >
               Explore Services
-
               <FiArrowRight size={14} />
             </Link>
 
@@ -1299,7 +1276,6 @@ export default function AboutPage() {
               "
             >
               <FiCalendar size={15} />
-
               Book Appointment
             </Link>
 
@@ -1327,7 +1303,6 @@ export default function AboutPage() {
               "
             >
               <FiPhone size={15} />
-
               Call Us
             </a>
           </div>
@@ -1497,11 +1472,7 @@ function ExperienceCard({
    CHECK POINT
 ========================================================= */
 
-function CheckPoint({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+function CheckPoint({ children }: { children: React.ReactNode }) {
   return (
     <div
       className="

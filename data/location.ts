@@ -36,7 +36,7 @@ export const locations: Location[] = [
       "Oceanic Spa Vashi offers relaxing massage and spa treatments from Satra Plaza on Palm Beach Road in Vashi, Navi Mumbai.",
     longDescription:
       "Visit Oceanic Spa Vashi for a calm wellness experience with full body massage, Thai massage, Swedish massage, Balinese massage, deep tissue massage, foot reflexology and selected spa treatments with scrub or Jacuzzi options.",
-    image: "/gallery/gallery-1.png",
+    image: "/gallery/gallery-1.jpg",
     imageAlt:
       "Oceanic Spa Vashi spa location in Navi Mumbai",
     keywords: [

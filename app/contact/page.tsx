@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
   FaArrowRight as FiArrowRight,
   FaCalendarAlt as FiCalendar,
@@ -266,65 +267,178 @@ export default function ContactPage() {
       ==================================================== */}
 
       <section
-        aria-labelledby="contact-form-heading"
+  aria-labelledby="contact-form-heading"
+  className="
+    bg-[#F7FAF9]
+    px-4
+    py-12
+    sm:px-6
+    sm:py-16
+    lg:px-8
+    lg:py-20
+  "
+>
+  <div
+    className="
+      mx-auto
+      grid
+      max-w-7xl
+      gap-8
+      lg:grid-cols-[0.85fr_1.15fr]
+      lg:items-start
+    "
+  >
+    {/* LEFT SIDE */}
+    <div className="lg:sticky lg:top-32">
+      <p
         className="
-          bg-[#F7FAF9]
-          px-4
-          py-12
-          sm:px-6
-          sm:py-16
-          lg:px-8
-          lg:py-20
+          text-[10px]
+          font-bold
+          uppercase
+          tracking-[0.22em]
+          text-[#175C5A]
         "
       >
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
-          <div className="lg:sticky lg:top-32">
-            <p
-              className="
-                text-[10px]
-                font-bold
-                uppercase
-                tracking-[0.22em]
-                text-[#175C5A]
-              "
-            >
-              Appointment Enquiry
-            </p>
+        Appointment Enquiry
+      </p>
 
-            <h2
-              id="contact-form-heading"
-              className="
-                mt-3
-                font-serif
-                text-3xl
-                font-normal
-                leading-tight
-                text-[#24302F]
-                sm:text-4xl
-              "
-            >
-              Share your details with us
-            </h2>
+      <h2
+        id="contact-form-heading"
+        className="
+          mt-3
+          font-serif
+          text-3xl
+          font-normal
+          leading-tight
+          text-[#24302F]
+          sm:text-4xl
+        "
+      >
+        Share your details with us
+      </h2>
 
-            <p
-              className="
-                mt-4
-                max-w-xl
-                text-sm
-                leading-7
-                text-[#687371]
-              "
-            >
-              Use the enquiry form to request a callback
-              for massage treatments, availability and
-              appointment timing at Oceanic Spa Vashi.
-            </p>
-          </div>
+      <p
+        className="
+          mt-4
+          max-w-xl
+          text-sm
+          leading-7
+          text-[#687371]
+        "
+      >
+        Use the enquiry form to request a callback
+        for massage treatments, availability and
+        appointment timing at Oceanic Spa Vashi.
+      </p>
 
-          <ContactForm />
+      {/* IMAGE */}
+      <div
+        className="
+          relative
+          mt-7
+          h-[280px]
+          w-full
+          overflow-hidden
+          rounded-[24px]
+          border
+          border-[#DCE5E2]
+          shadow-[0_18px_50px_rgba(23,92,90,0.12)]
+          sm:h-[360px]
+          lg:h-[420px]
+        "
+      >
+        <Image
+          src="/images/find.png"
+          alt="Oceanic Spa Vashi appointment enquiry"
+          fill
+          sizes="(max-width: 1024px) 100vw, 42vw"
+          className="
+            object-cover
+            object-center
+            transition-transform
+            duration-700
+            hover:scale-105
+          "
+        />
+
+        {/* DARK OVERLAY */}
+        <div
+          className="
+            absolute
+            inset-0
+            bg-gradient-to-t
+            from-black/65
+            via-black/10
+            to-transparent
+          "
+        />
+
+        {/* IMAGE TEXT */}
+        <div
+          className="
+            absolute
+            bottom-0
+            left-0
+            z-10
+            p-5
+            sm:p-6
+          "
+        >
+          <span
+            className="
+              inline-flex
+              rounded-full
+              border
+              border-white/25
+              bg-black/20
+              px-3
+              py-1.5
+              text-[9px]
+              font-bold
+              uppercase
+              tracking-[0.16em]
+              text-white
+              backdrop-blur-md
+            "
+          >
+            Oceanic Spa Vashi
+          </span>
+
+          <h3
+            className="
+              mt-3
+              max-w-sm
+              font-serif
+              text-2xl
+              font-normal
+              leading-tight
+              text-white
+              sm:text-3xl
+            "
+          >
+            Your relaxation experience starts here.
+          </h3>
+
+          <p
+            className="
+              mt-2
+              max-w-sm
+              text-xs
+              leading-5
+              text-white/75
+            "
+          >
+            Contact our team to check treatments,
+            timings and appointment availability.
+          </p>
         </div>
-      </section>
+      </div>
+    </div>
 
+    {/* RIGHT SIDE FORM */}
+    <ContactForm />
+  </div>
+</section>
       {/* ===================================================
           CONTACT CONTENT
       ==================================================== */}
