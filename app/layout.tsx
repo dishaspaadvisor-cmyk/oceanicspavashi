@@ -148,15 +148,18 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(localBusinessSchema).replace(
               /</g,
-              "\\u003c"
+              "\\u003c",
             ),
           }}
         />
 
         {/* <!-- Google tag (gtag.js) --> */}
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18407292104"></script>
-<script>
-  {`
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18407292104"
+        ></script>
+        <script>
+          {`
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -164,7 +167,43 @@ export default function RootLayout({
   gtag('config', 'AW-18407292104');
 
   `}
-</script>
+        </script>
+
+        <script>
+          {`
+    gtag('event', 'conversion', {
+      'send_to': 'AW-18407292104/ZN6gCIuf-uYcEMj5o8lE',
+      'value': 1.0,
+      'currency': 'INR',
+      'transaction_id': ''
+      // 'new_customer': true /* calculate dynamically, populate with true/false */,
+  });
+  
+  `}
+        </script>
+
+        <script>
+          {`
+
+  function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-18407292104/ZN6gCIuf-uYcEMj5o8lE',
+      'value': 1.0,
+      'currency': 'INR',
+      'transaction_id': '',
+      'event_callback': callback
+      // 'new_customer': true /* calculate dynamically, populate with true/false */,
+  });
+  return false;
+}
+  
+  `}
+        </script>
 
         {/* =================================================
             WEBSITE SCHEMA
@@ -173,10 +212,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(websiteSchema).replace(
-              /</g,
-              "\\u003c"
-            ),
+            __html: JSON.stringify(websiteSchema).replace(/</g, "\\u003c"),
           }}
         />
       </head>
@@ -195,9 +231,7 @@ export default function RootLayout({
             PAGE CONTENT
         ================================================= */}
 
-        <MainContent>
-          {children}
-        </MainContent>
+        <MainContent>{children}</MainContent>
 
         {/* =================================================
             GLOBAL POPUP
@@ -236,10 +270,7 @@ export default function RootLayout({
               strategy="afterInteractive"
             />
 
-            <Script
-              id="google-analytics"
-              strategy="afterInteractive"
-            >
+            <Script id="google-analytics" strategy="afterInteractive">
               {`
                 window.dataLayer = window.dataLayer || [];
 
@@ -268,10 +299,7 @@ export default function RootLayout({
               strategy="afterInteractive"
             />
 
-            <Script
-              id="google-ads"
-              strategy="afterInteractive"
-            >
+            <Script id="google-ads" strategy="afterInteractive">
               {`
                 window.dataLayer = window.dataLayer || [];
 
