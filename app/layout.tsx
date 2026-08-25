@@ -153,57 +153,9 @@ export default function RootLayout({
           }}
         />
 
-        {/* <!-- Google tag (gtag.js) --> */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=AW-18407292104"
-        ></script>
-        <script>
-          {`
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    
+     
 
-  gtag('config', 'AW-18407292104');
-
-  `}
-        </script>
-
-        <script>
-          {`
-    gtag('event', 'conversion', {
-      'send_to': 'AW-18407292104/ZN6gCIuf-uYcEMj5o8lE',
-      'value': 1.0,
-      'currency': 'INR',
-      'transaction_id': ''
-      // 'new_customer': true /* calculate dynamically, populate with true/false */,
-  });
-  
-  `}
-        </script>
-
-        <script>
-          {`
-
-  function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  };
-  gtag('event', 'conversion', {
-      'send_to': 'AW-18407292104/ZN6gCIuf-uYcEMj5o8lE',
-      'value': 1.0,
-      'currency': 'INR',
-      'transaction_id': '',
-      'event_callback': callback
-      // 'new_customer': true /* calculate dynamically, populate with true/false */,
-  });
-  return false;
-}
-  
-  `}
-        </script>
 
         {/* =================================================
             WEBSITE SCHEMA

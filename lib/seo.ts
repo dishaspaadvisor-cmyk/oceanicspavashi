@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { site } from "@/data/site";
+import { SITE_URL, site } from "@/data/site";
 import type { Service } from "@/data/service";
 import type { SEOPage } from "@/data/keyword";
 
@@ -17,12 +17,6 @@ export interface FAQItem {
   question: string;
   answer: string;
 }
-
-/* =========================================================
-   BASE URL
-========================================================= */
-
-export const SITE_URL = site.url.replace(/\/$/, "");
 
 /* =========================================================
    URL HELPERS

@@ -77,12 +77,22 @@ export interface SiteData {
   };
 }
 
+const DEFAULT_SITE_URL = "https://oceanic-spa-vashi.com";
+
+const normalizeSiteUrl = (url: string | undefined): string => {
+  const siteUrl = url?.trim() || DEFAULT_SITE_URL;
+
+  return siteUrl.replace(/\/$/, "");
+};
+
+export const SITE_URL = normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE);
+
 export const site: SiteData = {
   name: "Oceanic Spa Vashi",
   shortName: "Oceanic Spa",
   tagline: "Premium spa and massage in Vashi",
 
-  url: "https://oceanic-spa-vashi.com",
+  url: SITE_URL,
 
   contact: {
     phone: "7045513567",
@@ -160,7 +170,7 @@ export const site: SiteData = {
 
   seo: {
     title:
-      "Oceanic Spa Vashi | Best Spa & Massage Spa in Vashi, Navi Mumbai",
+      "Oceanic Spa Vashi | Spa & Full Body Massage in Vashi, Navi Mumbai",
 
     description:
       "Looking for a premium spa in Vashi, Navi Mumbai? Oceanic Spa offers relaxing body massages and wellness treatments in a comfortable and professional spa environment.",
@@ -236,6 +246,7 @@ keywords: [
 
     areaServed: [
       "Vashi",
+      "vashi sector 1",
       "Sanpada",
       "Nerul",
       "Seawoods",
