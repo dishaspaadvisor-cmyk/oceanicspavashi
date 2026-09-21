@@ -215,57 +215,8 @@ export default function RootLayout({
             GOOGLE ANALYTICS
         ================================================= */}
 
-        {process.env.NEXT_PUBLIC_GA_ID && (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
-              strategy="afterInteractive"
-            />
 
-            <Script id="google-analytics" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-
-                function gtag() {
-                  window.dataLayer.push(arguments);
-                }
-
-                gtag('js', new Date());
-
-                gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', {
-                  page_path: window.location.pathname,
-                });
-              `}
-            </Script>
-          </>
-        )}
-
-        {/* =================================================
-            GOOGLE ADS
-        ================================================= */}
-
-        {process.env.NEXT_PUBLIC_GOOGLE_ADS_ID && (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ADS_ID}`}
-              strategy="afterInteractive"
-            />
-
-            <Script id="google-ads" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-
-                function gtag() {
-                  window.dataLayer.push(arguments);
-                }
-
-                gtag('js', new Date());
-
-                gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ADS_ID}');
-              `}
-            </Script>
-          </>
-        )}
+    
       </body>
     </html>
   );
