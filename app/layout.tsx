@@ -152,8 +152,8 @@ export default function RootLayout({
           }}
         />
 
-    
-     
+
+
 
 
         {/* =================================================
@@ -213,11 +213,10 @@ export default function RootLayout({
         {/* =================================================
             GOOGLE ANALYTICS
         ================================================= */}
-      {/* <!-- Google tag (gtag.js) --> */}
+        {/* <!-- Google tag (gtag.js) --> */}
 
 
 
-    
       </body>
     </html>
   );
