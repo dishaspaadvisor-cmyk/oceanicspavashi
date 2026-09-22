@@ -417,15 +417,16 @@ export default function Navbar() {
                 <Image
                   src={site.branding.logo}
                   alt={site.branding.logoAlt}
-                  width={180}
-                  height={72}
+                  width={300}
+                  height={120}
+                  loading="eager"
                   className="
                     relative
-                    h-10
-                    w-auto
+                    h-9
+                    w-50
                     object-contain
-                    sm:h-11
-                    lg:h-12
+                    sm:h-10
+                    lg:h-11
                   "
                 />
               </Link>
@@ -1011,11 +1012,12 @@ export default function Navbar() {
             <Image
               src={site.branding.logo}
               alt={site.branding.logoAlt}
-              width={180}
-              height={72}
+              width={300}
+              height={120}
+              loading="eager"
               className="
-                h-11
-                w-auto
+                h-10
+                w-0
                 object-contain
               "
             />

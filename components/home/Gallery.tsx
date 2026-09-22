@@ -449,7 +449,7 @@ function GalleryItem({
             ? "sm:min-h-[250px]"
             : "sm:min-h-[190px]"
           }
-          lg:min-h-0
+          lg:min-h-[230px]
         `}
       >
         <Image

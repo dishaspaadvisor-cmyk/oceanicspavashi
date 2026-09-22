@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import Script from "next/script";
 
 import "./globals.css";
 
@@ -214,6 +213,8 @@ export default function RootLayout({
         {/* =================================================
             GOOGLE ANALYTICS
         ================================================= */}
+      {/* <!-- Google tag (gtag.js) --> */}
+
 
 
     
